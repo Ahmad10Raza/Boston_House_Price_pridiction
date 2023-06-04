@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+
+</head>
+
+<body >
+  
+ <div class="login">
+	<h1>Boston House Price Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+      <input type="text" name="CRIM" placeholder="CRIM" required="required" /><br>
+    	<input type="text" name="ZN" placeholder="ZN" required="required" /><br>
+        <input type="text" name="INDUS" placeholder="INDUS" required="required" /><br>
+        <input type="text" name="CHAS" placeholder="CHAS" required="required" /><br>
+        <input type="text" name="NOX" placeholder="NOX" required="required" /><br>
+        <input type="text" name="RM" placeholder="RM" required="required" /><br>
+        <input type="text" name="Age" placeholder="Age" required="required" /><br>
+        <input type="text" name="DIS" placeholder="DIS" required="required" /><br>
+        <input type="text" name="RAD" placeholder="RAD" required="required" /><br>
+        <input type="text" name="TAX" placeholder="TAX" required="required" /><br>
+        <input type="text" name="PTRATIO" placeholder="PTRATIO" required="required" /><br>
+        <input type="text" name="B" placeholder="B" required="required" /><br>
+        <input type="text" name="LSTAT" placeholder="LSTAT" required="required" /><br>
+
+       
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+  
+   
+ </div>
+ {{prediction_text}}
+ <style>
+  body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1 {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0 0 1em 0;
+  }
+  
+  form {
+    width: 500px;
+    margin: 0 auto;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  button {
+    background-color: #337ab7;
+    color: white;
+    font-size: 1em;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .login {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .prediction_text {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0 0 1em 0;
+  }
+</style>
+</body>
+</html>
